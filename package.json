@@ -1,0 +1,13 @@
+{
+  "name": "farcaster-tetris-safe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo skip",
+    "start": "node api/index.ts"
+  },
+  "dependencies": {
+    "frog": "^0.12.3",
+    "hono": "^4.0.0"
+  }
+}
