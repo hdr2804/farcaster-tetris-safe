@@ -1,2 +1,4 @@
+const { serve } = require("@hono/node-server")
 const { app } = require("../src/index")
-module.exports = app
+
+module.exports = serve(app)
