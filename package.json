@@ -1,9 +1,9 @@
 {
-  "name": "farcaster-tetris-final",
+  "name": "farcaster-tetris-esm",
   "private": true,
+  "type": "module",
   "scripts": {
-    "build": "echo skip",
-    "start": "node api/index.js"
+    "build": "echo skip"
   },
   "dependencies": {
     "frog": "^0.12.3",
