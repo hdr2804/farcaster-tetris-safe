@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "echo skip",
-    "start": "node api/index.ts"
+    "start": "node api/index.js"
   },
   "dependencies": {
     "frog": "^0.12.3",
