@@ -1,8 +1,8 @@
-function board() {
+export function board() {
   return Array.from({ length: 20 }, () => Array(10).fill(0))
 }
 
-function piece() {
+export function piece() {
   return {
     shape: [
       [1, 1],
@@ -13,7 +13,7 @@ function piece() {
   }
 }
 
-function collide(b, p, dx = 0, dy = 0) {
+export function collide(b, p, dx = 0, dy = 0) {
   return p.shape.some((r, y) =>
     r.some((v, x) =>
       v && b[p.y + y + dy]?.[p.x + x + dx]
@@ -21,12 +21,10 @@ function collide(b, p, dx = 0, dy = 0) {
   )
 }
 
-function merge(b, p) {
+export function merge(b, p) {
   p.shape.forEach((r, y) =>
     r.forEach((v, x) => {
       if (v) b[p.y + y][p.x + x] = 1
     })
   )
 }
-
-module.exports = { board, piece, collide, merge }
