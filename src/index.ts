@@ -1,11 +1,11 @@
-import { Frog } from "frog"
-import { board, piece, collide, merge } from "./game"
-import { render } from "./render"
+const { Frog } = require("frog")
+const { board, piece, collide, merge } = require("./game")
+const { render } = require("./render")
 
-export const app = new Frog({ title: "Tetris Safe" })
+const app = new Frog({ title: "Tetris Frame" })
 
 app.frame("/", async (c) => {
-  let state = c.frameData?.state ?? {
+  let state = c.frameData?.state || {
     board: board(),
     piece: piece()
   }
@@ -38,4 +38,4 @@ app.frame("/", async (c) => {
   })
 })
 
-export default app
+module.exports = { app }
