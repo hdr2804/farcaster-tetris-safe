@@ -1,6 +1,13 @@
-const { createServer } = require("@hono/node-server")
 const { app } = require("../src/index")
 
-module.exports = createServer({
-  fetch: app.fetch
-})
+module.exports = async function handler(req, res) {
+  const response = await app.fetch(req)
+
+  res.statusCode = response.status
+  response.headers.forEach((value, key) => {
+    res.setHeader(key, value)
+  })
+
+  const body = await response.arrayBuffer()
+  res.end(Buffer.from(body))
+}
