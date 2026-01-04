@@ -1,11 +1,8 @@
-export const W = 10
-export const H = 20
-
-export function board() {
-  return Array.from({ length: H }, () => Array(W).fill(0))
+function board() {
+  return Array.from({ length: 20 }, () => Array(10).fill(0))
 }
 
-export function piece() {
+function piece() {
   return {
     shape: [
       [1, 1],
@@ -16,7 +13,7 @@ export function piece() {
   }
 }
 
-export function collide(b, p, dx = 0, dy = 0) {
+function collide(b, p, dx = 0, dy = 0) {
   return p.shape.some((r, y) =>
     r.some((v, x) =>
       v && b[p.y + y + dy]?.[p.x + x + dx]
@@ -24,10 +21,12 @@ export function collide(b, p, dx = 0, dy = 0) {
   )
 }
 
-export function merge(b, p) {
+function merge(b, p) {
   p.shape.forEach((r, y) =>
     r.forEach((v, x) => {
       if (v) b[p.y + y][p.x + x] = 1
     })
   )
 }
+
+module.exports = { board, piece, collide, merge }
