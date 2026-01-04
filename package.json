@@ -1,7 +1,6 @@
 {
-  "name": "farcaster-tetris-safe",
+  "name": "farcaster-tetris-final",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "echo skip",
     "start": "node api/index.ts"
