@@ -1,6 +1,4 @@
-import { W, H } from "./game"
-
-export function render(b, p) {
+function render(b, p) {
   const z = 20
   let r = ""
 
@@ -17,12 +15,15 @@ export function render(b, p) {
     row.forEach((c, x) => {
       if (c)
         r += `<rect x="${(p.x+x)*z}" y="${(p.y+y)*z}"
-        width="${z}" height="${z}" fill="#ffcc00"/>`
+        width="${z}" height="${z}"
+        fill="#ffcc00"/>`
     })
   )
 
   return `<svg xmlns="http://www.w3.org/2000/svg"
-    width="${W*z}" height="${H*z}">
+    width="200" height="400">
     ${r}
   </svg>`
 }
+
+module.exports = { render }
